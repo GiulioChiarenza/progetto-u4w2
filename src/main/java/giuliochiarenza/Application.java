@@ -111,19 +111,23 @@ public class Application {
         int pageNumber = Integer.parseInt(sc.nextLine());
 
 
-        System.out.print("Author: ");
+        System.out.print("Author (if it's a book else press enter): ");
         String author = sc.nextLine();
 
-        System.out.print("Type (if it's a book): ");
+        System.out.print("Type (if it's a book else press enter): ");
         String type = sc.nextLine();
 
-        Publications publication = new Book(codeISBN, title, publicationYear, pageNumber, author, type);
+        Publications publication;
+        if (type.isEmpty() || author.isEmpty()) {
+            publication = new Magazine(codeISBN, title, publicationYear, pageNumber, Periodicity.SIMESTRAL);
+        } else {
+            publication = new Book(codeISBN, title, publicationYear, pageNumber, author, type);
+        }
         archiveManager.addPublication(publication);
 
         System.out.println("Publication added successfully.");
         System.out.println(archiveManager);
     }
-
     private static void removePublication(Scanner sc, ArchiveManager archiveManager) {
         System.out.print("Enter the ISBN code of the publication you want to remove: ");
         int codeISBN = Integer.parseInt(sc.nextLine());
@@ -131,7 +135,40 @@ public class Application {
         System.out.println("Post successfully removed.");
         System.out.println(archiveManager);
     }
-
+    private static void findByISBN(Scanner sc, ArchiveManager archiveManager) {
+        System.out.print("Enter the ISBN code of the publication to search for: ");
+        int codeISBN = Integer.parseInt(sc.nextLine());
+        Publications publication = archiveManager.findByISBN(codeISBN);
+        if (publication != null) {
+            System.out.println("Publication found: ");
+            System.out.println(publication);
+        } else {
+            System.out.println("Publication not found.");
+        }
+    }
+    private static void findByPublicationYear(Scanner sc, ArchiveManager archiveManager) {
+        System.out.print("Enter the publication year to search for: ");
+        int year = Integer.parseInt(sc.nextLine());
+        System.out.println("Publications found for the year " + year + ": ");
+        for (Publications publication : archiveManager.findByPublicationYear(year)) {
+            System.out.println(publication);
+        }
+    }
+    private static void findByAuthor(Scanner sc, ArchiveManager archiveManager) {
+        System.out.print("Enter the name of the author to search for: ");
+        String author = sc.nextLine();
+        System.out.println("Publications found for the author " + author + ": ");
+        for (Publications publication : archiveManager.findByAuthor(author)) {
+            System.out.println(publication);
+        }
+    }
+    private static void saveToFile(Scanner sc, ArchiveManager archiveManager) {
+        String filename = "disk";
+        archiveManager.saveToFile(filename);
+    }
+    private static void loadFromFile(Scanner sc, ArchiveManager archiveManager) {
+        
+    }
     }
 
 
