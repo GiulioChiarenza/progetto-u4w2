@@ -41,5 +41,97 @@ public class Application {
 
         System.out.println(archiveManager);
 
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Add new publication");
+            System.out.println("2. Remove publication");
+            System.out.println("3. Search publication by ISBN");
+            System.out.println("4. Search publications by year of publication");
+            System.out.println("5. Search publications by author");
+            System.out.println("6. Save the archive to disk");
+            System.out.println("7. Load the archive from disk");
+            System.out.println("8. Exit");
+            System.out.print("Choice: ");
+
+            int choice;
+            try {
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
+                continue;
+            }
+
+
+            switch (choice) {
+                case 1:
+                    addNewPublication(sc, archiveManager);
+                    break;
+                case 2:
+                    removePublication(sc, archiveManager);
+                    break;
+                case 3:
+                    findByISBN(sc, archiveManager);
+                    break;
+                case 4:
+                    findByPublicationYear(sc, archiveManager);
+                    break;
+                case 5:
+                    findByAuthor(sc, archiveManager);
+                    break;
+                case 6:
+                    saveToFile(sc, archiveManager);
+                    break;
+                case 7:
+                    loadFromFile(sc, archiveManager);
+                    break;
+                case 8:
+                    System.out.println("Bye!");
+                    return;
+                default:
+                    System.out.println("Invalid choice. try again.");
+            }
+        }
     }
-}
+    private static void addNewPublication(Scanner sc, ArchiveManager archiveManager) {
+        System.out.println("Enter the publication details:");
+
+        System.out.print("Code ISBN: ");
+        int codeISBN = Integer.parseInt(sc.nextLine());
+
+
+        System.out.print("Title: ");
+        String title = sc.nextLine();
+
+        System.out.print("Publication year: ");
+        int publicationYear = Integer.parseInt(sc.nextLine());
+
+
+        System.out.print("Page number: ");
+        int pageNumber = Integer.parseInt(sc.nextLine());
+
+
+        System.out.print("Author: ");
+        String author = sc.nextLine();
+
+        System.out.print("Type (if it's a book): ");
+        String type = sc.nextLine();
+
+        Publications publication = new Book(codeISBN, title, publicationYear, pageNumber, author, type);
+        archiveManager.addPublication(publication);
+
+        System.out.println("Publication added successfully.");
+        System.out.println(archiveManager);
+    }
+
+    private static void removePublication(Scanner sc, ArchiveManager archiveManager) {
+        System.out.print("Enter the ISBN code of the publication you want to remove: ");
+        int codeISBN = Integer.parseInt(sc.nextLine());
+        archiveManager.removePublication(codeISBN);
+        System.out.println("Post successfully removed.");
+        System.out.println(archiveManager);
+    }
+
+    }
+
+

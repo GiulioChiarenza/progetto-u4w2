@@ -7,7 +7,6 @@
     <list default="true" id="c552e10d-9f94-4ffc-b596-dad301eeaba9" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/disk.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/giuliochiarenza/ArchiveManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/giuliochiarenza/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/giuliochiarenza/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/giuliochiarenza/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/giuliochiarenza/Book.java" afterDir="false" />
