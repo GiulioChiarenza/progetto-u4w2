@@ -1,0 +1,10 @@
+Book{codeISBN=1001, title='Harry Potter And The Philosopher's Stone', publicationYear=1997, pageNumber=300, author='J.K Rowling', type='action, family, drama, comedy, horror, adventure, fantasy'}
+Book{codeISBN=1002, title='Lo Hobbit', publicationYear=1937, pageNumber=330, author='J.R.R Tolkien', type='novel, epic, fantasy, adventure'}
+Book{codeISBN=1003, title='One Piece Vol.1044', publicationYear=1997, pageNumber=17, author='Eiichiro Oda', type='adventure, fantasy, comedy, action'}
+Book{codeISBN=1004, title='Moby Dick', publicationYear=1851, pageNumber=732, author='Herman Melville', type='novel, adventure, sea fiction'}
+Book{codeISBN=1005, title='the Great Gatsby', publicationYear=1925, pageNumber=540, author='F. Scott Fitzgerald', type='novel, tragedy, literary fiction'}
+Magazine{codeISBN=1006, title='Time', publicationYear=1923, pageNumber=32, periodicity=WEEKLY}
+Magazine{codeISBN=1007, title='Vanity Fair', publicationYear=1990, pageNumber=40, periodicity=WEEKLY}
+Magazine{codeISBN=1008, title='Focus', publicationYear=1992, pageNumber=73, periodicity=MONTHLY}
+Magazine{codeISBN=1009, title='Vogue', publicationYear=1892, pageNumber=45, periodicity=MONTHLY}
+Magazine{codeISBN=1010, title='Shonen Jump', publicationYear=1959, pageNumber=19, periodicity=WEEKLY}

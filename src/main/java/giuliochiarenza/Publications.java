@@ -2,14 +2,14 @@ package giuliochiarenza;
 
 public abstract class Publications {
     private int codeISBN;
-    private String tile;
+    private String title;
     private int publicationYear;
     private int pageNumber;
 
 
-    public Publications(int codeISBN, String tile, int publicationYear, int pageNumber) {
+    public Publications(int codeISBN, String title, int publicationYear, int pageNumber) {
         this.codeISBN = codeISBN;
-        this.tile = tile;
+        this.title = title;
         this.publicationYear = publicationYear;
         this.pageNumber = pageNumber;
     }
@@ -23,12 +23,12 @@ public abstract class Publications {
         this.codeISBN = codeISBN;
     }
 
-    public String getTile() {
-        return tile;
+    public String getTitle() {
+        return title;
     }
 
     public void setTile(String tile) {
-        this.tile = tile;
+        this.title = title;
     }
 
     public int getPublicationYear() {
@@ -51,7 +51,7 @@ public abstract class Publications {
     public String toString() {
         return "Publications{" +
                 "codeISBN=" + codeISBN +
-                ", tile='" + tile + '\'' +
+                ", tile='" + title + '\'' +
                 ", publicationYear=" + publicationYear +
                 ", pageNumber=" + pageNumber +
                 '}';

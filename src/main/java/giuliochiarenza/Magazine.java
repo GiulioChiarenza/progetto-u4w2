@@ -1,50 +1,25 @@
 package giuliochiarenza;
 
-import interfaces.Archive;
 
-import java.util.List;
-
-public class Magazine extends Publications implements Archive {
+public class Magazine extends Publications {
 
     private Periodicity periodicity;
 
-    public Magazine(int codeISBN, String tile, int publicationYear, int pageNumber, Periodicity periodicity) {
-        super(codeISBN, tile, publicationYear, pageNumber);
+    public Magazine(int codeISBN, String title, int publicationYear, int pageNumber, Periodicity periodicity) {
+        super(codeISBN, title, publicationYear, pageNumber);
        this.periodicity= periodicity;
     }
 
     @Override
-    public void addPublication(Publications publication) {
-
+    public String toString() {
+        return "Magazine{" +
+                "codeISBN=" + getCodeISBN() +
+                ", title='" + getTitle() + '\'' +
+                ", publicationYear=" + getPublicationYear() +
+                ", pageNumber=" + getPageNumber() +
+                ", periodicity=" + periodicity +
+                '}';
     }
 
-    @Override
-    public void removePublication(int codeISBN) {
 
-    }
-
-    @Override
-    public Publications findByISBN(int codeISBN) {
-        return null;
-    }
-
-    @Override
-    public List<Publications> findByPublicationYear(int year) {
-        return null;
-    }
-
-    @Override
-    public List<Publications> findByAuthor(String author) {
-        return null;
-    }
-
-    @Override
-    public void saveToFile(String filename) {
-
-    }
-
-    @Override
-    public void loadFromFile(String filename) {
-
-    }
 }

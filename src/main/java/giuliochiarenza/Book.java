@@ -1,16 +1,13 @@
 package giuliochiarenza;
 
-import interfaces.Archive;
 
-import java.util.List;
-
-public class Book extends Publications implements Archive {
+public class Book extends Publications  {
 
     private String author;
     private String type;
 
-    public Book(int codeISBN, String tile, int publicationYear, int pageNumber, String author, String type) {
-        super(codeISBN, tile, publicationYear, pageNumber);
+    public Book(int codeISBN, String title, int publicationYear, int pageNumber, String author, String type) {
+        super(codeISBN, title, publicationYear, pageNumber);
         this.author= author;
         this.type= type;
     }
@@ -34,43 +31,14 @@ public class Book extends Publications implements Archive {
     @Override
     public String toString() {
         return "Book{" +
-                "author='" + author + '\'' +
+                "codeISBN=" + getCodeISBN() +
+                ", title='" + getTitle() + '\'' +
+                ", publicationYear=" + getPublicationYear() +
+                ", pageNumber=" + getPageNumber() +
+                ", author='" + author + '\'' +
                 ", type='" + type + '\'' +
                 '}';
     }
 
-    @Override
-    public void addPublication(Publications publication) {
 
-    }
-
-    @Override
-    public void removePublication(int codeISBN) {
-
-    }
-
-    @Override
-    public Publications findByISBN(int codeISBN) {
-        return null;
-    }
-
-    @Override
-    public List<Publications> findByPublicationYear(int year) {
-        return null;
-    }
-
-    @Override
-    public List<Publications> findByAuthor(String author) {
-        return null;
-    }
-
-    @Override
-    public void saveToFile(String filename) {
-
-    }
-
-    @Override
-    public void loadFromFile(String filename) {
-
-    }
 }
